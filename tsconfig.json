@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+      "lib": ["es2020"],
+      "module": "commonjs",
+      "target": "es2020",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "sourceMap": false,
+      "outDir": "dist"
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "local_modules/node_modules"
+  ]
+}
