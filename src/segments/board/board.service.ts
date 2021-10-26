@@ -90,8 +90,7 @@ export async function updateBoard(user: UserSession | null, boardId: ObjectId, p
   }
 
   /*
-  const session = await Board.startSession() Disable transaction because mongo is garbage and 
-  needs replica set for it to work, sounds legit lmao 
+  const session = await Board.startSession() //Disable transaction because mongo needs replica set for it to work
   */
   const ctx = { user, session: null }
   //await session.withTransaction(async () => {

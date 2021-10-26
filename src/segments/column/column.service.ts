@@ -45,8 +45,7 @@ async function updateColumn (user: UserSession | null, columnId: ObjectId, patch
   })
 
   /*
-  const session = await Column.startSession() Disable transaction because mongo is garbage and 
-  needs replica set for it to work, sounds legit lmao 
+  const session = await Column.startSession()  //Disable transaction because mongo needs replica set for it to work
   */
   const ctx = { user, session: null }
   //await session.withTransaction(async () => {

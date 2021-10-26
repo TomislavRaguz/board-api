@@ -1,7 +1,7 @@
 import { mongooseTestConnect } from "../../singletons/mongoTest";
 /*
 check out board.test.ts to see testing
-dont feel like testing everything in a test app lol
+dont feel like testing everything in a test app
 */
 describe('authService', () => {
   let dbCleanup: any;

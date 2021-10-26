@@ -57,7 +57,7 @@ boardController.patch('/v1/boards/:id', registeredUserOnly, wrapAsync(async (req
   }))
   const boardId = ensure(req.params.id, sStructStringMongoId)
   const user = await req.authJWT.getData() as UserSession;
-  /*const board = */await BoardService.updateBoard(user, boardId, payload)
+  await BoardService.updateBoard(user, boardId, payload)
   const board = await BoardService.exposeOne(user, boardId, {})
   res.json(board)
 }))
