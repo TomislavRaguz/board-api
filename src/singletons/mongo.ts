@@ -1,8 +1,12 @@
 import mongoose from 'mongoose';
 
+const { MONGO_CONNECTION_STRING } = process.env;
+
+if(!MONGO_CONNECTION_STRING) throw Error('Required env variable MONGO_CONNECTION_STRING not defined. Please check .env file')
+
 export async function mongooseConnect () {
   try {
-    await mongoose.connect('mongodb://localhost:27017', {
+    await mongoose.connect(MONGO_CONNECTION_STRING as string, {
       dbName: 'collab',
       serverSelectionTimeoutMS: 5000
     })

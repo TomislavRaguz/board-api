@@ -1,4 +1,9 @@
 require('dotenv').config()
+
+const { NODE_ENV, PORT } = process.env;
+if(!NODE_ENV) throw Error('Required env variable NODE_ENV not defined. Please check .env file')
+if(!PORT) throw Error('Required env variable PORT not defined. Please check .env file')
+
 import express, { NextFunction, Request, Response } from 'express'
 import helmet from 'helmet'
 import cookieParser from 'cookie-parser'
@@ -14,8 +19,6 @@ import { mongooseConnect } from './singletons/mongo'
 import { authController } from './segments/auth/auth.controller'
 import { boardController } from './segments/board/board.controller'
 import { columnController } from './segments/column/column.controller'
-
-const { NODE_ENV, PORT } = process.env;
 
 const API = express();
 //we disable helmet CSP in dev so it wont interfere with tools

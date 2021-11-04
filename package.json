@@ -9,7 +9,7 @@
     "build": "tsc",
     "ts:watch": "tsc -w",
     "prod:start": "npm install --only=production && pm2 start ecosystem.config.js --env production",
-		"prod:reload": "pm2 reload ecosystem.config.js --env production"
+    "prod:reload": "pm2 reload ecosystem.config.js --env production"
   },
   "author": "",
   "license": "ISC",
